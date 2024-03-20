@@ -14,6 +14,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import com.mannetroll.metrics.LogKeys;
+
 @SpringBootApplication
 public class GuacamoleApp implements CommandLineRunner {
 	private static final Logger LOG = LogManager.getLogger(GuacamoleApp.class);
@@ -26,6 +28,7 @@ public class GuacamoleApp implements CommandLineRunner {
 
 	public static void doLog() {
 		Map<String, Object> tmp = new HashMap<String, Object>();
+		tmp.put(LogKeys.MESSAGE, "The message goes here!");
 		tmp.put("a_string", "hello");
 		tmp.put("a_number", 11L);
 		tmp.put("a_float", 1.1234F);
